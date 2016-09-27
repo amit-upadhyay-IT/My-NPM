@@ -5,4 +5,7 @@
 // you to write your log in colors.
 
 var chalk = require("chalk");
-console.log(chalk.green("Hello"));
+console.log(chalk.green.bgYellow.bold("Hello"));
+
+// So the String "Hello" will be converted to green color with yellow bg
+// bold style and all then the string will get print on console.
