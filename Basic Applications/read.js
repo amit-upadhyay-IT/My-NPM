@@ -65,3 +65,20 @@ console.log("Program ends");
 // and flag.
 
 // So this is Async call example
+//
+//One strange this will happen when you will run this code: First the message Program ends
+//gets printed then the contents of the file gets printed.
+//The reason is of-course Async callback, what happens is that whatever is written in the
+//readFile method might be multithreaded implementation and this is something which may
+//take longer time because the file contents may be huge. So as I said in node.js any
+//operation we do and we feel that it is going to take longer time then we should run
+//that code snipper in parallel thread.
+
+// So that's the power of node.js where if long operations are getting done then we have to
+// call the async method to do that. If we have multiple files to read then we can keep
+// writing lines like this fs.readFile(....); and then all of those file reading opertations
+// will be queued together and they will be kept in a queue and one after the other whenever
+// the async library gets done it will execute the other one.
+//
+// This is most important feature of node.js and this is how we are gonna write our node
+// application.
