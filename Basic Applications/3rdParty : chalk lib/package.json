@@ -9,12 +9,16 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node chalk.js"
+    "test": "node chalk.js",
+    "list_folder" : "ls",
+    "prelist_folder" : "clear",
+    "postlist_folder" : "cd .."
   },
   "keywords": [
     "chalk",
     "program"
   ],
   "author": "Amit",
-  "license": "MIT"
+  "license": "MIT",
+  "config" : {"message" : "hi, I'm amit upadhyay"}
 }

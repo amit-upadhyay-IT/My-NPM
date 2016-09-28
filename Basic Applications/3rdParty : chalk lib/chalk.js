@@ -9,3 +9,5 @@ console.log(chalk.green.bgYellow.bold("Hello"));
 
 // So the String "Hello" will be converted to green color with yellow bg
 // bold style and all then the string will get print on console.
+
+console.log(chalk.red(process.env.npm_package_config_message));
