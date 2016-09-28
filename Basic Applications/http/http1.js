@@ -2,6 +2,7 @@ var http = require("http");
 
 var server = http.createServer(function(req, res){
 
+    console.log("Method = " + req.method);
     res.end("Hello World");
 
 });
