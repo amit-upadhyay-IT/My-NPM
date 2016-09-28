@@ -1,0 +1,19 @@
+{
+  "name": "chalk",
+  "version": "1.0.0",
+  "description": "colorful log",
+  "main": "chalk.js",
+  "dependencies": {
+    "chalk": "^1.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node chalk.js"
+  },
+  "keywords": [
+    "chalk",
+    "program"
+  ],
+  "author": "Amit",
+  "license": "MIT"
+}
