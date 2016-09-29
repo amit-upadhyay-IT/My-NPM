@@ -1,6 +1,8 @@
-var exp = require("express")();
+var exp = require("express");
 
-exp.listen("5555", function(){
+var app = exp();
+
+app.listen("5555", function(){
     console.log("Server is on at 5555");
 });
 
