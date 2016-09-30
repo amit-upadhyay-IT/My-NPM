@@ -1,5 +1,7 @@
 var exp = require("express");
 
+console.log(process.env.npm_package_config_message);
+
 var app = exp();
 
 app.get("/data", function(req, res){
