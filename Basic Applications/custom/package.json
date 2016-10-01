@@ -4,7 +4,8 @@
   "description": "app demonstrating custom modules",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "test": "nodemon app.js",
+    "run_it": "nodemon app.js"
   },
   "keywords": [
     "node",

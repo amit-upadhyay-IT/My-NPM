@@ -1,6 +1,8 @@
 // some mathematical calculations will be performed in some other file and
 // through this file we will be calling those functions written in other file.
 
-addition(3, 7);
+var myMaths = require('./maths.js');
 
-multiplication(2, 5);
+myMaths.add(3, 7);
+
+myMaths.mult(2, 5);
