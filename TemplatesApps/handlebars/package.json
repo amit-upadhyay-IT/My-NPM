@@ -1,0 +1,22 @@
+{
+  "name": "handlebars",
+  "version": "1.0.0",
+  "description": "demo of express handlebars bootstrap session handling body-parser\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "keywords": [
+    "req",
+    "express",
+    "handlebars",
+    "bootstrap",
+    "session",
+    "bodyparser"
+  ],
+  "author": "AMIT",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
