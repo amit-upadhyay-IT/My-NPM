@@ -3,11 +3,15 @@ var exp = require('express');
 var app = exp();
 
 var bodyparser = require('body-parser');
+var session = require('express-session');
 
 app.use(exp.static(__dirname+"/public"));
 
 //body-parser
-app.use(bodyparser());
+app.use(bodyparser());// this is deprecated
+
+//session
+app.use(session({secret:"secret", resave:true, saveUninitialized: true}));
 
 app.get('/players/:name/:age', function(req, res){
 
