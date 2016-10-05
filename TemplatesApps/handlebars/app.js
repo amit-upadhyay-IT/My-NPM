@@ -2,7 +2,12 @@ var exp = require('express');
 
 var app = exp();
 
+var bodyparser = require('body-parser');
+
 app.use(exp.static(__dirname+"/public"));
+
+//body-parser
+app.use(bodyparser());
 
 app.get('/players/:name/:age', function(req, res){
 
