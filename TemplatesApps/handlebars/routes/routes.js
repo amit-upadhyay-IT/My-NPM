@@ -1,54 +1,40 @@
 
-function homeR(req, res){// this is mapping the home page
-    res.render('home.ejs', {title:"I Love my city",
-                            headline:"Every city has its own personality"}); // the template file will have data to be changed and the changing data has to be captured
-    // in javascript variables and the values for the changing data will be provided within the {}.
+exports.loginPageHandler = function (req, res){// this is mapping the home page
 
-    // the express library will automatically be able to find a file whose name is home.ejs and after that that file will be
-    // shown over here.
+    //req.session.destroy();
+    res.render('login.handlebars', {});
 
-    // we have only two variables inside our home.ejs file and those are title and headline and these have to be specified in
-    // these {}
 }
 
+exports.landingPageHandler = function (req, res){
 
+    // it is the handler for the page which comes after user logs in
+    // if by that time if the user has provided a name (that name will be present in session)
+    // then we are loading that name into the variable person from session, if not then
+    // that name is coming via login page in the request query parameter and the input text
+    // whatever is being provided in the login page the nave attribute of that input text
+    // will be nm. So the query parameter of request which is going to be get request so login request
+    // if you remember is a get request. So whatever the parameter nm will have then that will be
+    // coming to you as req.query.nm and that value we are populating in person variable
 
-function cityR(req, res){
-
-    // for city we want to use single template file and have data for 4-5 cities over there. So that's why we except the user to enter something like hostname/london, hostname/newyork
-    // etc. So the / and positional parameter are mentioned in 'city' variable.
-    // So we have to populate the values of title and headline appropriately.
-
-    var cityname = req.params.city;
-
-    var titleValue;
-    var headlineValue;
-    // based on city I'll modify the titleValue and headlineValue
-
-    if (cityname === 'newyork')
+    var person;
+    if (res.session.userName)
     {
-        titleValue = "New York";
-        headlineValue = "Business capital of the world";
+        person = req.session.userName;
     }
-    else if (cityname == 'london')
-    {
-	    titleValue = "London";
-        headlineValue = "City of Thames";
-    }
-    else if (cityname == 'newdelhi')
-    {
-	    titleValue = "New Delhi";
-        headlineValue = "Place where I live";
-    }
-    else if (cityname == 'paris')
-    {
-	    titleValue = "Paris";
-        headlineValue = "Place where I never visited";
+    else{
+         person = req.query.nm;
     }
 
-    res.render('city.ejs', {title:titleValue,
-    headline:headlineValue});
+    // new we are rendering the landingpage.
+
+    res.render('landingpage.handlebars', {welcomeMessage:person});
+
+    // so server side code for the landingPageHandler is only this
+
 }
+exports.cityPageHandler = function(req, res){
 
-module.exports.cityFn = cityR;
-module.exports.homeFn = homeR;
+};
+
+// so we have structure of all three page handlers.
