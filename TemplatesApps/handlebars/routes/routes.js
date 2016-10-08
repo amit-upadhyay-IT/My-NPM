@@ -35,6 +35,24 @@ exports.landingPageHandler = function (req, res){
 }
 exports.cityPageHandler = function(req, res){
 
+    var cityname = req.params.city;
+    var person;
+    var headlineValue;
+
+    if (cityname === 'newyork'){
+         titleValue = "New York";
+         headlineValue = "Business capital of the world";
+    } else if (cityname === 'london'){
+        titleValue = "London";
+        headlineValue = "City of the Thames";
+    } else if (cityname === 'newdelhi'){
+         titleValue = "New Delhlli;i"
+         headlineValue = "Capital city of India";
+    } else if (cityname === 'paris'){
+        titleValue = "Paris ";
+        headlineValue = "Fashion capital of the world";
+    }
+    res.render('city.ejs', {title:titleValue, headline: headlineValue});
 };
 
 // so we have structure of all three page handlers.
